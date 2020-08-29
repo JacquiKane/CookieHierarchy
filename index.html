@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="cookie.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Instantiate That Cookie!</title>
+    <style>
+        .boldface {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: larger;
+        }
+        
+        .boldfaceinfo {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: lighter;
+            font-size: large;
+        }
+        
+        .boldfaceemphasis {
+            font-size: x-large;
+        }
+        
+        .imgcookie {
+            width: 15%;
+            height: auto;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .imgOven {
+            width: auto;
+            height: 200px;
+            text-align: center;
+        }
+        
+        .imgBowl {
+            width: auto;
+            height: 200px;
+            text-align: center;
+        }
+        
+        .imgPlate {
+            width: auto;
+            height: 200px;
+            text-align: center;
+            align-content: center;
+        }
+        
+        .imgIngredients {
+            width: 200px;
+            height: auto;
+            position: absolute;
+            z-index: 100;
+        }
+        
+        .progressEmphasis {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: medium;
+            font-style: italic;
+            font-weight: bold;
+            justify-content: left;
+            text-align: left;
+            width: 75%;
+        }
+        
+        .buttonsize {
+            width: 90%;
+        }
+        
+        .cookieRadioButtons {
+            border: 2px dashed brown;
+            padding: 0.3%;
+            text-align: left;
+        }
+        
+        .methodButton {
+            border: 2px dashed brown;
+        }
+        
+        .cardImg {
+            width: 50px;
+            height: 50px;
+        }
+        /* Flip Cards CSS */
+        
+        .card-container {
+            display: grid;
+            perspective: 700px;
+        }
+        
+        .card-flip {
+            display: grid;
+            grid-template: 1fr / 1fr;
+            grid-template-areas: "frontAndBack";
+            transform-style: preserve-3d;
+            transition: all 0.7s ease;
+        }
+        
+        .card-flip div {
+            backface-visibility: hidden;
+            transform-style: preserve-3d;
+        }
+        
+        .front {
+            grid-area: frontAndBack;
+        }
+        
+        .back {
+            grid-area: frontAndBack;
+            transform: rotateY(-180deg);
+        }
+        
+        .card-container:hover .card-flip {
+            transform: rotateY(180deg);
+        }
+        
+        .cardimage {
+            width: 55%;
+            height: auto;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cardblockformat {
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12  boldfont">
+
+                <h1 class="boldface">
+                    Now For Something Different! Cookie <span class="boldfaceemphasis">Inheritance</span> Workshop
+                </h1>
+                <p>The plain cookie class has all the basic ingredients. A chocolate chip cookie class just includes another ingredient - chocolate chips. Another cookie, nut chocolate chip cookie, differs from the chocolate chip cookie, with added nuts.
+                    It makes sense for
+                    <i>ChocolateChipCookie</i> class to inherit from <i>PlainCookie</i> class.
+                    <i>NutChocolateChipCookie</i> would inherit from <i>ChocolateChipCookie</i> class. A 3 layer hierarchy!
+
+                </p>
+
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3 cookieRadioButtons">
+                <div>
+                    <p>Select cookie, click <i>Construct</i> and call the constructor. Instance method buttons are disabled until the cookie class is instantiated.</p>
+                </div>
+                <div style="display: block;">
+                    <img id="plainingredients" class="imgIngredients" src="plainingreds.png" alt="Plain Cookie" />
+                    <img id="chocchipingredients" class="imgIngredients" src="chocchipingreds.png" alt="Chocolate Chip Cookie" />
+                    <img id="nutchocchipingredients" class="imgIngredients" src="nutchocchipingreds.png" alt="Nut Chocolate Chip Cookie" />
+                </div>
+
+            </div>
+
+
+            <!-- Card 0 PLAIN COOKIE-->
+            <div class="col-md-3 card-container">
+                <div style="display: flex ">
+                    <div class="card-flip">
+                        <!-- Card 0 Front -->
+                        <div class="card front">
+                            <div class="card-header">
+                                Plain Cookie
+                            </div>
+                            <img class="cardimage img-fluid" src="plaincookie.png" class="card-img-top img-fluid">
+                            <span class="fa fa-4x fa-smile-o text-center"></span>
+                            <div class="card-block cardblockformat">
+
+
+                                <h6>Grandparent Class</h6>
+
+                                <h6 class="card-subtitle mb-2 text-muted text-center">First Class In 3 Layer hierarchy
+                                </h6>
+
+                            </div>
+                        </div>
+                        <!-- End Card 0 Front -->
+
+                        <!-- Card 0 Back -->
+                        <div class="card back">
+                            <div class="card-block cardblockformat">
+
+
+
+                                <div class="card-header">
+                                    <h6 class="card-subtitle mb-2 text-muted text-center">Common Ingredients</h6>
+
+                                </div>
+
+                                <img class="cardimage img-fluid" src="plainingreds.png" class="card-img-top img-fluid">
+                                <button class=" btn btn-primary mb-3" id="code1" onclick="location.href = 'plaincookie.java';" aria-expanded="code">
+                                    Code
+                                </button>
+                                <p>
+                                    Flour, Butter, Eggs, Sugar, Vanilla Extract, Salt
+                                </p>
+                                <p class="card-text">
+                                    A parent/grandparent class contains common attributes and methods.
+
+                                </p>
+
+                            </div>
+                        </div>
+                        <!-- End Card 0 Back -->
+
+                    </div>
+                    <!-- End flip card -->
+                </div>
+                <!-- end flex div -->
+            </div>
+            <!-- end card container -->
+
+            <!-- Card 1 Chocolate Chip Cookie-->
+            <div class="col-md-3 card-container">
+                <div style="display: flex ">
+                    <div class="card-flip">
+                        <!-- Card 0 Front -->
+                        <div class="card front">
+                            <div class="card-header">
+                                Chocolate Chip Cookie
+                            </div>
+                            <img class="cardimage img-fluid" src="chocchipcookie.png" class="card-img-top img-fluid">
+                            <div class="card-block cardblockformat">
+                                <h6>Child Class and Parent Class</h6>
+
+                                <h6 class="card-subtitle mb-2 text-muted text-center">Middle Class In 3 Layer hierarchy
+                                </h6>
+
+                            </div>
+                        </div>
+                        <!-- End Card 1 Front -->
+
+                        <!-- Card 1 Back -->
+                        <div class="card back">
+                            <div class="card-block cardblockformat">
+
+                                <div class="card-header">
+                                    <h6 class="card-subtitle mb-2 text-muted text-center">Common Ingredients + Chocolate Chips
+                                    </h6>
+                                </div>
+
+                                <img class="cardimage img-fluid" src="chocchipingreds.png" class="card-img-top img-fluid">
+                                <button class=" btn btn-primary mb-3" id="code1" onclick="location.href = 'chocolatechipcookie.java';" aria-expanded="code">
+                                    Code
+                                </button>
+                                <p class="card-text">
+                                    Flour, Butter, Eggs, Sugar, Vanilla Extract, Salt <b>and Chocolate Chips</b>
+
+                                </p>
+                                <p class="card-text">
+                                    A subclass contains specialized attributes and methods.
+
+                                </p>
+
+                            </div>
+                        </div>
+                        <!-- End Card 1 Back -->
+
+                    </div>
+                    <!-- End flip card -->
+                </div>
+                <!-- end flex div -->
+            </div>
+            <!-- end card container -->
+
+            <!-- Card 2 Nut Chocolate Chip Cookie-->
+            <div class="col-md-3 card-container">
+                <div style="display: flex ">
+                    <div class="card-flip">
+                        <!-- Card 0 Front -->
+                        <div class="card front">
+                            <div class="card-header">
+                                Nut Chocolate Chip Cookie
+                            </div>
+                            <img class="cardimage img-fluid" src="nutchocchipcookie.png" class="card-img-top img-fluid">
+                            <span class="fa fa-4x fa-smile-o text-center"></span>
+                            <div class="card-block cardblockformat">
+
+                                <h6>Child Class</h6>
+
+                                <h6 class="card-subtitle mb-2 text-muted text-center">Child Class In 3 Layer hierarchy
+                                </h6>
+
+                            </div>
+                        </div>
+                        <!-- End Card 2 Front -->
+
+                        <!-- Card 2 Back -->
+                        <div class="card back">
+                            <div class="card-block cardblockformat">
+
+
+                                <div class="card-header">
+                                    <h6 class="card-subtitle mb-2 text-muted text-center">Parent Ingredients + Nuts</h6>
+                                </div>
+                                <img class="cardimage img-fluid" src="nutchocchipingreds.png" class="card-img-top img-fluid">
+                                <button class=" btn btn-primary mb-3" id="code1" onclick="location.href = 'nutchocolatechipcookie.java';" aria-expanded="code">
+                                    Code
+                                </button>
+
+                                <p class="card-text">
+
+                                    Flour, Butter, Eggs, Sugar, Vanilla Extract, Salt, Chocolate Chips <b>and Nuts</b>
+
+                                </p>
+                                <p class="card-text">
+                                    Each level in a class hierarchy includes specialization.
+
+                                </p>
+
+                            </div>
+                        </div>
+                        <!-- End Card 2 Back -->
+
+                    </div>
+                    <!-- End flip card -->
+                </div>
+                <!-- end flex div -->
+            </div>
+            <!-- end card container -->
+
+        </div>
+
+
+
+
+
+        <div class="row">
+            <div class="col-md-3 cookieRadioButtons">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="cookies" id="plaincookie1" value="1" checked>
+                    <label class="form-check-label" for="exampleRadios1">
+                        Plain Cookie
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="cookies" id="chocchipcookie22" value="2">
+                    <label class="form-check-label" for="exampleRadios2">
+                        Chocolate Chip Cookie
+                    </label>
+                </div>
+                <div class="form-check disabled">
+                    <input class="form-check-input" type="radio" name="cookies" id="nutchochchipcookie3" value="3">
+                    <label class="form-check-label" for="exampleRadios3">
+                        Nut Chocolate Chip Cookie
+                    </label>
+                </div>
+
+
+                <section>
+                    <div>
+                        <button class=" btn btn-primary mb-3 buttonsize" id="makeacookie" aria-expanded="make the cookie">
+                            Construct(or) That Cookie!
+                        </button>
+                    </div>
+
+                    <div id="mixingbowl">
+
+                    </div>
+                </section>
+            </div>
+            <div class="col-md-3">
+                <img class="imgBowl" id="mixingbowlwannabe" src="mixingbowl.png" alt="Mixing Bowl" />
+                <div id="mixbutton">
+                    <button class=" btn btn-primary mb-3 buttonsize methodButton" id="mix" aria-expanded="mix the cookie batter">
+                        Call method mix
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <img id="oven" class="imgOven" src="oven0.png" alt="Cookie Oven" />
+                <div id="bakebutton">
+                    <button class=" btn btn-primary mb-3 buttonsize methodButton" id="bake" aria-expanded="bake the cookie">
+                        Call method bake
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <img id="servecookie" class="imgPlate" src="plate0.png" alt="serve cookie from Oven" />
+                <div id="servebutton">
+                    <button class=" btn btn-primary mb-3 buttonsize methodButton" id="serve" aria-expanded="serve the cookie">
+                        Call method serve
+                    </button>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

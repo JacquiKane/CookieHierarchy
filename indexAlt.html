@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="cookie.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Instantiate That Cookie!</title>
+    <style>
+        .boldface {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: larger;
+        }
+        
+        .boldfaceinfo {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: lighter;
+            font-size: large;
+        }
+        
+        .boldfaceemphasis {
+            font-size: x-large;
+        }
+        
+        .imgcookie {
+            width: 15%;
+            height: auto;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .imgOven {
+            width: auto;
+            height: 250px;
+            text-align: left;
+        }
+        
+        .imgBowl {
+            width: auto;
+            height: 150px;
+            text-align: right;
+        }
+        
+        .imgIngredients {
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            z-index: 100;
+        }
+        
+        .progressEmphasis {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: medium;
+            font-style: italic;
+            font-weight: bold;
+            justify-content: left;
+            text-align: left;
+            width: 75%;
+        }
+        
+        .buttonsize {
+            width: 90%;
+        }
+        
+        .cookieRadioButtons {
+            border: 2px dashed brown;
+            padding: 0.3%;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-10 boldfont">
+                    <h1 class="boldface">
+                        Cookie <span class="boldfaceemphasis">Inheritance</span> Workshop
+                    </h1>
+                    <p>See how to reuse properties and methods. We have a plain cookie, a chocolate chip cookie and a nut chocolate chip cookie. The plain cookie has all the common ingredients, so it makes sense for <i>ChocolateChipCookie</i> class to inherit
+                        from a <i>PlainCookie</i> class.
+                        <i>NutChocolateChipCookie</i> would inherit from <i>ChocolateChipCookie</i> class. A 3 layer hierarchy!
+
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <section> <img id="plainingredients" class="imgIngredients" src="plainingreds.png" alt="Plain Cookie" />
+                </section>
+
+                <img id="chocchipingredients" class="imgIngredients" src="chocchipingreds.png" alt="Chocolate Chip Cookie" />
+                <img id="nutchocchipingredients" class="imgIngredients" src="nutchocchipingreds.png" alt="Nut Chocolate Chip Cookie" />
+            </div>
+            <div class="col-md-8">
+                <section class="card">
+                    <img id="plain1" class="imgcookie" src="plaincookie.png" alt="Plain Cookie" />
+                </section>
+
+                <img id="choc2" class="imgcookie" src="chocchipcookie.png" alt="Chocolate Chip Cookie" />
+                <img id="nutchoc3" class="imgcookie" src="nutchocchipcookie.png" alt="Nutty Chocolate Chip Cookie" />
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-4" id="col1">
+                <section>
+                    <h6>Click the buttons to see the ingredients you need for the cookie ...</h6>
+                    <div>
+                        <button class=" btn btn-primary mb-3 buttonsize" data-toggle="collapse" data-target="#plaincookie" aria-expanded="Link to class header">
+                            Plain Cookie >>
+                        </button>
+                    </div>
+
+                </section>
+                <section>
+                    <div>
+                        <button class=" btn btn-primary mb-3 buttonsize" data-toggle="collapse" data-target="#chocchipcookie" aria-expanded="Link to class header">
+                            Chocolate Chip Cookie >>
+                        </button>
+                    </div>
+
+                </section>
+
+                <section>
+                    <div>
+                        <button class=" btn btn-primary mb-3 buttonsize" data-toggle="collapse" data-target="#nutchocchipcookie" aria-expanded="Link to class header">
+                            Nut Chocolate Chip Cookie >>
+                        </button>
+                    </div>
+
+                </section>
+            </div>
+            <div class="col-md-8" id="col2">
+                <div id="plaincookie" class="collapse mb-3">
+                    <br>
+                    <h4 class="boldface">Plain Cookie</h4>
+                    <p>2 grams of butter, 2 grams of sugar, small pinch of salt, 1 tablespoon of beaten egg, pinch of Vanilla extract and 5 grams of flour.</p>
+                </div>
+                <div id="chocchipcookie" class="collapse mb-3">
+                    <br>
+                    <h4 class="boldface">Chocolate Chip Cookie</h4>
+                    <p>
+                        All the ingredients of the plain cookie, plus 1 large tablespoon of chocolate chips.
+                    </p>
+                </div>
+                <div id="nutchocchipcookie" class="collapse mb-3">
+                    <br>
+                    <h4 class="boldface">Nut Chocolate Chip Cookie</h4>
+                    <p>
+                        All the ingredients of the Chocolate Chip cookie, and 1 tablespoon of mixed nuts.
+                    </p>
+                </div>
+                <div>
+                    <br>
+                    <h4 class="boldfaceinfo">
+                        <p>The Plain Cookie contains all the basic ingredients for baking a no-nonsense no-frills cookie. The Chocolate Chip Cookie is the plain cookie, plus chocolate chips. The Nut Chocolate Chip cookie has all the ingredients of the Chocolate
+                            Chip Cookie, and a handful of mixed nuts. Classy!
+                        </p>
+                    </h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 cookieRadioButtons">
+                <p>Select a cookie type, and then click the button to call the constructor.</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="cookies" id="plaincookie1" value="1" checked>
+                    <label class="form-check-label" for="exampleRadios1">
+                        Plain Cookie
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="cookies" id="chocchipcookie22" value="2">
+                    <label class="form-check-label" for="exampleRadios2">
+                        Chocolate Chip Cookie
+                    </label>
+                </div>
+                <div class="form-check disabled">
+                    <input class="form-check-input" type="radio" name="cookies" id="nutchochchipcookie3" value="3">
+                    <label class="form-check-label" for="exampleRadios3">
+                        Nut Chocolate Chip Cookie
+                    </label>
+                </div>
+
+
+                <section>
+                    <div>
+                        <button class=" btn btn-primary mb-3 buttonsize" id="makeacookie" aria-expanded="make the cookie">
+                            Construct(or) That Cookie!
+                        </button>
+                    </div>
+
+                    <div id="mixingbowl">
+
+                    </div>
+                </section>
+            </div>
+            <div class="col-md-4">
+                <img class="imgBowl" id="mixingbowlwannabe" src="mixingbowl.png" alt="Mixing Bowl" />
+                <div id="mixbutton">
+                    <button class=" btn btn-primary mb-3 buttonsize" id="mix" aria-expanded="mix the cookie batter">
+                        Call method mix
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <img id="oven" class="imgOven" src="oven0.png" alt="Cookie Oven" />
+                <div id="bakebutton">
+                    <button class=" btn btn-primary mb-3 buttonsize" id="bake" aria-expanded="bake the cookie">
+                        Call method bake
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
